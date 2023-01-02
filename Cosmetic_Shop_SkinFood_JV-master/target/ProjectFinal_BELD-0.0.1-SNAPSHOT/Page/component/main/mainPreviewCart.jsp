@@ -33,7 +33,7 @@
 
 
 		</div>
-		<form action="confirmOrder" class="form_to_comfirm_order row align-items-center "
+		<form action="confirmOrder" enctype="multipart/form-data" class="form_to_comfirm_order row align-items-center "
 			style="width: 80%" method="POST">
 			<div
 				class="form_to_comfirm_order_order col-md-8 row flex-column justify-content-center">
@@ -76,6 +76,13 @@
 						placeholder="Nhập mã vô đây !!!">
 					<div class="btn btn-danger" onclick="discountCoupon()"
 						style="width: 100px; height: 35px;">Áp mã!</div>
+				</div>
+				<div class="row">
+					<label for="billingform-key" class="col-md-6">Khóa</label>
+					<div class="custom-file col-md-6" style="padding: 0">
+						<input type="file" class="custom-file-input" style="width: 250px;" name="fileKey" id="billingform-key" required>
+						<label class="custom-file-label" for="billingform-key"></label>
+					</div>
 				</div>
 				<div class="row" style="width: 600px">
 					<textarea name="orderNote" wrap="off" cols="28" rows="5"
