@@ -7,6 +7,7 @@ import web.java.utils.Signatures;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -43,13 +44,24 @@ public class ChangeKeyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uploadFolder = request.getServletContext().getRealPath("/uploads");
         Path pathUpload = Paths.get(uploadFolder);
-        Part partUpload = request.getPart("fileKey");
+        Part part = request.getPart("fileKey");
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("loginSession");
+
         if(!Files.exists(pathUpload)) {
             Files.createDirectory(pathUpload);
         }
-        boolean check = signature.check(partUpload, pathUpload, user.getPublicKey());
+        String docFileKey = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+        String pathFileUpload = Paths.get(pathUpload.toString(), docFileKey).toString();
+        part.write(pathFileUpload);
+        FileInputStream inputStream = new FileInputStream(pathFileUpload);
+        int ch;
+        String privateKey = "";
+        while ((ch = inputStream.read()) != -1) {
+            privateKey += ((char) ch);
+        }
+        inputStream.close();
+        boolean check = signature.check(privateKey, user.getPublicKey());
         if (check) {
             response.sendRedirect("/change-key?fileName=privateKey.txt");
         } else {
