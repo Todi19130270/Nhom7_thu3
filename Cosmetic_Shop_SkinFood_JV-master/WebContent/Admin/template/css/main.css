@@ -1,0 +1,29 @@
+.main-panel {
+	width: 90%;
+	margin: auto;
+	border: 3px solid red;
+	border-radius: 10px;
+}
+.content-wrapper {
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	width: 90%;
+	padding: 40px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+};
+.optgroup-choosen {
+	color: red;
+	background-color: white;
+	font-size: 20px;
+};
+
+.option-choosen{
+	background-color: white;
+	color: black;
+}
+
+
+
+

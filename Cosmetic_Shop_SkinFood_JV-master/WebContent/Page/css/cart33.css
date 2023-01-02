@@ -1,0 +1,363 @@
+.order{
+    padding-bottom: 70px;
+    background-color: #eee;
+}
+
+.cart_main_header{
+    background-color: white;
+}
+
+form{
+    margin: 0px;
+}
+.cart_main{
+    background-color: #eee;
+}
+
+.cart_main_header-left{
+    position: relative;
+    padding: 20px;
+    padding-left: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.cart_main_header-left a{
+    position: relative;
+}
+.cart_main_header-left a::after{
+    content: "|";
+    font-size: 60px;
+    top: -15px;
+    color: #189427;
+    width: 0px;
+    height: 100px;
+    position: absolute;
+}
+
+.cart_main_header-left img{
+    width: 100px;
+    height: 100px;
+    margin-right: 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.cart_main_header_left_title{
+    margin-left: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(255, 60, 60);
+}
+
+.cart_main_wrapper{
+    background-color: #eee;
+    padding: 30px;
+}
+
+.cart_main_element_header{
+    height: 40px !important;
+}
+
+.cart_main_element_header .cart_main_element_title{
+    text-align: center;
+}
+
+.cart_main_element_header p{
+    color: red;
+}
+
+.cart_main_element{
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.cart_main_element img{
+    width: 8%;
+    /* height: 70px; */
+    margin-right: 20px;
+}
+
+.cart_main_element_title1{
+    width: 8%;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: red;
+}
+
+.cart_main_element_title{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(161, 24, 24);
+    width: 25%;
+}
+
+.cart_main_element_title_type{
+    text-align: center;
+    width: 10%;
+}
+
+.cart_main_element_title_price{
+    width: 12%;
+    text-align: center;
+}
+
+.cart_main_element_title_number{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.cart_main_element_title_number button{
+    margin: 0px;
+    padding: 0px;
+    width: 20%;
+    height: 30px;
+    background-color: rgb(238, 29, 29);
+    border: none;
+    cursor: pointer;
+}
+
+.cart_main_element_title_number button:focus-visible{
+    outline: none;
+}
+
+
+.input_number{
+    margin: 0px;
+    padding: 0px;
+    width: 30%;
+    height: 30px;
+    border: none;
+    text-align: center;
+    color:rgb(216, 36, 36);
+
+}
+.input_number:focus-visible{
+    outline: none;
+}
+
+.cart_main_element_title_total{
+    width: 30%;
+    text-align: center;
+    color:rgb(216, 36, 36);
+    border: none;
+    background-color: transparent;
+}
+.cart_main_element_title_total:focus-visible{
+    outline: none;
+}
+
+.cart_main_element_title_delete{
+    width: 10%;
+    text-align: center; 
+    margin: 0px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.cart_main_element_title_delete input{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color:rgb(216, 36, 36);
+}
+
+.cart_main_element_title_delete input:hover{
+    color:rgb(161, 24, 24);
+}
+
+.order_setting{
+    border-bottom: 100px;
+}
+
+.cart_main_wrapper_list_order{
+    background-color: white;
+    margin: 50px;
+    padding-left: 30px;
+}
+
+.form_continue_to_order{
+    width: 100%;
+}
+
+.form_continue_to_order input{
+    background-color: #f53d2d;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin: 30px;
+    font-size: 18px;
+}
+
+.cart_list_order_title{
+    padding: 10px;
+    color:rgb(241, 60, 60);
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.cart_list_order_element_ne p{
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cart_list_order_element{
+    margin-top: 20px;
+}
+
+.cart_list_order_element p{
+    margin: 0px;
+}
+.cart_list_order_element_title,
+.cart_list_order_element_number{
+    color: #777;
+}
+
+.cart_list_order_element_single_price,
+.cart_list_order_element_total_price{
+    color:#f53d2d;
+    font-size: 17px;
+}
+
+.cart_list_order_element img{
+    width: 10%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+.cart_list_order_status_paying input{
+    margin: 0px;
+    padding: 18px;
+    border: none;
+    color: white;
+}
+.cart_list_order_status_paying{
+    color: white;
+    margin: 20px;
+    font-size: 18px;
+}
+
+
+.cart_list_order_status_price{
+    background-color: #189427;
+    color: white;
+    padding: 18px;
+    margin: 20px;
+    font-size: 18px;
+}
+
+.btn_status_payed{
+    background-color: #ddd;
+    color: #666;
+    padding: 18px;
+    margin: 20px;
+    font-size: 18px;
+}
+
+.container-order-confirm-element{
+    margin: 10px 0px;
+}
+
+
+.container-order{
+    background-color: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.container-order-title{
+    color:rgb(216, 36, 36);
+    padding: 20px;
+    text-align: center;
+}
+
+.container-order-confirm-elementfirst{
+    color:rgb(161, 24, 24);
+}
+
+.container-order-confirm-element p {
+    color: #777;
+}
+
+.container-order-confirm-element img{
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form_to_comfirm_order{
+    background-color: white;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.form_to_comfirm_order_order input{
+    height: 35px;
+    width: 40%;
+    border:#666 1px solid;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.form_to_comfirm_order_order input:focus-visible{
+    outline: none;
+}
+
+.form_to_comfirm_order_order label{
+    font-size: 18px;
+    color:black;
+}
+
+.form_to_comfirm_order_order .row{
+    margin: 4px;
+}
+
+.form_to_comfirm_order_order textarea{
+    outline: none;
+    width: 95%;
+    height: 5rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.form_to_comfirm_order_submit,
+.form_to_comfirm_order_submit-price{
+    padding: 0px;
+    margin: 0px;
+}
+
+.form_to_comfirm_order_submit-btn input{
+    border: none;
+    background-color: #189427;
+    color: white;
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 20px;
+}
+
+.form_to_comfirm_order_submit-price p,
+.form_to_comfirm_order_submit-btn input{
+    font-size: 18px;
+}
+
+.form_to_comfirm_order_submit-pricene{
+    border: none;
+    background-color: #189427;
+    color: white;
+    padding: 6px 22px;
+    text-align: center;
+}
