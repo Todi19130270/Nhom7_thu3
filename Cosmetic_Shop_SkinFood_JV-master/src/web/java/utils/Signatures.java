@@ -41,50 +41,5 @@ public class Signatures {
     public String base64Key(byte[] data){
         return Base64.getEncoder().encodeToString(data);
     }
-
-    public boolean check(Part part, Path pathUpload, String publicKey) {
-        String docFileKey = Paths.get(part.getSubmittedFileName()).getFileName().toString();
-        String pathFileUpload = Paths.get(pathUpload.toString(), docFileKey).toString();
-        String message = "To Be or not To Be";
-
-        FileInputStream inputStream = null;
-        try {
-            part.write(pathFileUpload);
-            inputStream = new FileInputStream(pathFileUpload);
-            int ch;
-            String privateKey = "";
-            while ((ch = inputStream.read()) != -1) {
-                privateKey += ((char) ch);
-            }
-            KeyFactory keyFactory = KeyFactory.getInstance("DSA");
-            X509EncodedKeySpec keySpecX509 = new X509EncodedKeySpec(Base64.getDecoder().decode(publicKey));
-            PKCS8EncodedKeySpec keySpecPKCS8 = new PKCS8EncodedKeySpec(Base64.getDecoder().decode(privateKey));
-            PrivateKey prvKey = keyFactory.generatePrivate(keySpecPKCS8);
-            PublicKey pubKey = keyFactory.generatePublic(keySpecX509);
-
-            Signature privateSignature = Signature.getInstance("DSA");
-
-            privateSignature.initSign(prvKey);
-            privateSignature.update(message.getBytes(StandardCharsets.UTF_8));
-            byte[] sign = privateSignature.sign();
-            Signature publicSignature = Signature.getInstance("DSA");
-            publicSignature.initVerify(pubKey);
-            publicSignature.update(message.getBytes(StandardCharsets.UTF_8));
-            boolean isCorrect = publicSignature.verify(sign);
-            return isCorrect;
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException | SignatureException | InvalidKeyException e) {
-            throw new RuntimeException(e);
-        } finally {
-            try {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return false;
-    }
+    
 }
